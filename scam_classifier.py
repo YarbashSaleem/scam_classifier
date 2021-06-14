@@ -9,7 +9,7 @@ review_database = open("review_database.csv","r")
 df=pd.read_table('review_database.csv',names=['label','review'],delimiter=',')
 df['label']=df.label.map({'ham ':0, 'scam':1})
 
-X_train, X_test, y_train, y_test = train_test_split(df['review'], df['label'], random_state=1)
+X_train, X_test, y_train, y_test = train_test_split(df['review'], df['label'], random_state=1,test_size=.2)
 
 
 
